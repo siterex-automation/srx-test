@@ -1,0 +1,23 @@
+<!DOCTYPE beans
+  PUBLIC '-//SPRING//DTD BEAN 2.0//EN'
+  'http://www.springframework.org/dtd/spring-beans-2.0.dtd'>
+<beans>
+   <bean id="MASTER.WebExperiment100best" parent="default.MASTER.WebExperiment100best">
+      <property name="recipeMap">
+         <map>
+            <entry key-ref="MASTER.WebBestPracticeRecipe" value="100"/>
+         </map>
+      </property>
+   </bean>
+   <bean id="ABTESTCONTROLLERIT.WebExperiment.SRX.TestRule.20160101" parent="default.MASTER.WebExperiment100best">
+      <property name="displayName">
+         <value>SiteRex AB Test (Control Rule/Test Rule - 2016-01-01)</value>
+      </property>
+      <property name="recipeMap">
+         <map>
+            <entry key-ref="ABTESTCONTROLLERIT.WebRecipe.SRX.Control.ControlRule.20160101" value="25"/>
+            <entry key-ref="ABTESTCONTROLLERIT.WebRecipe.SRX.Test.TestRule.20160101" value="75"/>
+         </map>
+      </property>
+   </bean>
+</beans>
